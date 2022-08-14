@@ -13,20 +13,11 @@ services:
         depends_on:
             - mysql
 
-    queue:
-        container_name: queue
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: 'php artisan queue:work'
-        depends_on:
-            - mysql
-
     mysql:
         image: mysql:8.0
         container_name: mysql
         environment:
-            MYSQL_DATABASE: mysql
+            MYSQL_DATABASE: laravel
             MYSQL_USER: root
             MYSQL_ROOT: root
             MYSQL_PASSWORD: root
