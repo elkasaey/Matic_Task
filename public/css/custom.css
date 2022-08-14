@@ -7787,12 +7787,12 @@ input#email, input#pwd {
 input#email:focus, input#pwd:focus {
   border-bottom: 2px solid #2068b0; }
 
-input#phone, input#pwd {
+input#mobile_no, input#pwd {
   border: none;
   border-bottom: 2px solid #c5c5c5;
   border-radius: inherit; }
 
-input#phone:focus, input#pwd:focus {
+input#mobile_no:focus, input#pwd:focus {
   border-bottom: 2px solid #2068b0; }
 
 .form-control:focus {

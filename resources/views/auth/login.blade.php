@@ -66,9 +66,9 @@
                         </div>
 					<div class="wrap-input validate-input" data-validate = "Valid phone is: +201**********">
                             <!-- <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email"> -->
-                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone">
-          @if ($errors->has('phone'))
-                  <span class="text-danger">{{ $errors->first('phone') }}</span>
+                            <input type="tel" class="form-control" id="mobile_no" name="mobile_no" placeholder="Enter Phone">
+          @if ($errors->has('mobile_no'))
+                  <span class="text-danger">{{ $errors->first('mobile_no') }}</span>
           @endif
 					</div>
 

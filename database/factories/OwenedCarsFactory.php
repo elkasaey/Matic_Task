@@ -17,7 +17,12 @@ class OwenedCarsFactory extends Factory
     public function definition()
     {
         return [
-            //
+          "user_id"=>,
+          "model"=>fake()->word(),
+          "body_number"=>fake()->isbn13(),
+          "motor_number"=>fake()->isbn10(),
+          "color"=>fake()->colorName(),
+          "model_year"=> fake()->year($max = 'now')
         ];
     }
 }

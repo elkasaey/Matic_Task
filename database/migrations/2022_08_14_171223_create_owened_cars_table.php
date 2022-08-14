@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('owened_cars', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
+            $table->string('model');
+            $table->string('body_number');
+            $table->string('motor_number');
+            $table->string('color');
+            $table->year('model_year');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
