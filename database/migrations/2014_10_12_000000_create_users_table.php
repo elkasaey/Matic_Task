@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('l_name');
             $table->string('mobile_no')->unique();
             // $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);

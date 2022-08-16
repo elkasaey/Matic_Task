@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('car_maintainances', function (Blueprint $table) {
             $table->id();
-            $table->integer('car_id')->unsigned();
-            $table->integer('maintainance_type_id')->unsigned();
-            $table->dateTime('maintainance_date', $precision = 0);
+            $table->unsignedBigInteger('car_id');
+            $table->unsignedBigInteger('maintainance_type_id');
+            $table->date('maintainance_date');
             $table->foreign('car_id')->references('id')->on('owened_cars')->onDelete('cascade');
             $table->foreign('maintainance_type_id')->references('id')->on('maintenance_types')->onDelete('cascade');
         });

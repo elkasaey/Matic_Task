@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Owened_cars>
  */
-class OwenedCarsFactory extends Factory
+class Owened_CarsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,6 @@ class OwenedCarsFactory extends Factory
     public function definition()
     {
         return [
-          "user_id"=>,
           "model"=>fake()->word(),
           "body_number"=>fake()->isbn13(),
           "motor_number"=>fake()->isbn10(),

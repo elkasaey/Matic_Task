@@ -14,6 +14,6 @@ class CarMaintainanceSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Car_maintainance::factory(1000)->create();
     }
 }

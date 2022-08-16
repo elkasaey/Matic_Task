@@ -24,7 +24,13 @@ class UpdateOwened_carsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required|exists:user',
+            'model' => 'required|string',
+            'body_number' => 'required|string',
+            'motor_number' => 'required|string',
+            'color' => 'required|string',
+            'model_year' => 'required|date_format:Y-m-d',
+
         ];
     }
 }

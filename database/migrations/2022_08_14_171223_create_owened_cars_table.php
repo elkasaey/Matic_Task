@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('owened_cars', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->string('model');
             $table->string('body_number');
             $table->string('motor_number');

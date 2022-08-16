@@ -13,7 +13,7 @@ class StoreCar_maintainanceRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,10 @@ class StoreCar_maintainanceRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+          'car_id' => 'required|exists:owened_cars',
+          'maintainance_type_id' => 'required|exists:maintenance_type',
+          'maintainance_date' => 'required|date',
+      ];
     }
 }

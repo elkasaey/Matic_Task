@@ -24,7 +24,9 @@ class UpdateCar_maintainanceRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'car_id' => 'required|exists:owened_cars',
+            'maintainance_type_id' => 'required|exists:maintenance_type',
+            'maintainance_date' => 'required|date',
         ];
     }
 }

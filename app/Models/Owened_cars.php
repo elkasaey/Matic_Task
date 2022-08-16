@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Owened_cars extends Model
 {
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo('App\Models\user');
+    }
 }

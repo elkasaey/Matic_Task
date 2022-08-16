@@ -15,7 +15,8 @@ class OwenedCarsController extends Controller
      */
     public function index()
     {
-        //
+      $owened_cars = Owened_cars::with("user")->get();
+      return view('owenedcar.index', compact('owened_cars'));
     }
 
     /**
@@ -25,7 +26,7 @@ class OwenedCarsController extends Controller
      */
     public function create()
     {
-        //
+        return view('owenedcar.create');
     }
 
     /**
@@ -36,7 +37,8 @@ class OwenedCarsController extends Controller
      */
     public function store(StoreOwened_carsRequest $request)
     {
-        //
+      $owened_cars = Owened_cars::create($request->all());
+      return redirect('/Owened')->with('completed', 'owned has been saved!');
     }
 
     /**
@@ -47,7 +49,7 @@ class OwenedCarsController extends Controller
      */
     public function show(Owened_cars $owened_cars)
     {
-        //
+        return view('owenedcar.show',compact('user'));
     }
 
     /**
@@ -58,7 +60,7 @@ class OwenedCarsController extends Controller
      */
     public function edit(Owened_cars $owened_cars)
     {
-        //
+        return view('owenedcar.edit', compact('user'));
     }
 
     /**
@@ -70,7 +72,8 @@ class OwenedCarsController extends Controller
      */
     public function update(UpdateOwened_carsRequest $request, Owened_cars $owened_cars)
     {
-        //
+      $owened_cars->update($request);
+      return redirect('/Owened')->with('completed', 'owned has been updated');
     }
 
     /**
@@ -81,6 +84,7 @@ class OwenedCarsController extends Controller
      */
     public function destroy(Owened_cars $owened_cars)
     {
-        //
+      $owened_cars->delete();
+      return redirect('/Owened')->with('completed', 'owned has been deleted');
     }
 }
